@@ -34,7 +34,15 @@ uvicorn --host 0.0.0.0 --port 8082 async_main:app --reload
 ```
 
 * 쿠버네티스 실행
+* 이미지 생성
+```sh
+docker build  local-test:v1 .
+```
 
+* 쿠버네티스 deploy
+```
+kubectl apply -f ./k8s/deploy.yaml
+```
 
 # 참고자료
 * https://betterprogramming.pub/the-dangers-of-async-in-python-and-how-to-avoid-them-6e6f98f19f0e
