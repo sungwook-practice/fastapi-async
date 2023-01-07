@@ -4,7 +4,7 @@ import time
 app = FastAPI()
 
 @app.get("/healthcheck")
-async def hello():
+async def healthcheck():
     return {"health": "check"}
 
 @app.get("/hello")
