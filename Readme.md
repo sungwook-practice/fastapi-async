@@ -38,7 +38,7 @@ uvicorn --host 0.0.0.0 --port 8082 async_main:app --reload
 # 쿠버네티스 실행
 * 이미지 생성
 ```sh
-docker build  local-test:v1 .
+docker build -t local-test:v1 .
 ```
 
 * 쿠버네티스 deploy
