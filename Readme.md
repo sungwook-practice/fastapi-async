@@ -1,5 +1,7 @@
 # 개요
 * Fastapi로 async 테스트
+* 유투브 영상: https://youtu.be/hS-6fJJpAgk
+* [발표자료](./presentation.pdf)
 
 # chatgpt 텍스트
 * 동기
