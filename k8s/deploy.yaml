@@ -26,7 +26,8 @@ spec:
             cpu: 100m
             memory: 128Mi
         livenessProbe:
-          tcpSocket:
+          httpGet:
+            path: /healthcheck
             port: 80
           initialDelaySeconds: 10
           timeoutSeconds: 5
