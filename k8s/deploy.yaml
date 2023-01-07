@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  async-test
+  name: async-test
   namespace: default
   labels:
-    app:  async-test
+    app: async-test
 spec:
   replicas: 1
   selector:
@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app:  async-test
+        app: async-test
     spec:
       containers:
       - name:  async-test
@@ -27,13 +27,26 @@ spec:
             memory: 128Mi
         livenessProbe:
           tcpSocket:
-            port: 8080
+            port: 80
           initialDelaySeconds: 10
           timeoutSeconds: 5
           successThreshold: 1
           failureThreshold: 2
-          periodSeconds: 10
+          periodSeconds: 5
         ports:
-        - containerPort:  8080
+        - containerPort:  80
           name:  async-test
       restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: async-test
+spec:
+  type: NodePort
+  selector:
+    app: async-test
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 31900
