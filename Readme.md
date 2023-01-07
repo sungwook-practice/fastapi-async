@@ -46,6 +46,11 @@ docker build -t local-test:v1 .
 kubectl apply -f ./k8s/deploy.yaml
 ```
 
+* 삭제
+```
+kubectl delete -f ./k8s/deploy.yaml
+```
+
 # 참고자료
 * https://betterprogramming.pub/the-dangers-of-async-in-python-and-how-to-avoid-them-6e6f98f19f0e
 * https://florimond.dev/en/posts/2019/08/introduction-to-asgi-async-python-web/
